@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chorse</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <header>
+        💪 Chorse
+    </header>
+    <main id="MainOutlet" hx-history-elt {{if .}} {{else}}hx-trigger="load" hx-get="/view/home" {{end}}>
+        {{or . "<p>Loading...</p>"}}
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" title="Home" hx-get="/view/home" hx-target="#MainOutlet" hx-push-url="true">🏠
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="Leaderboard" hx-get="/view/leaderboard" hx-target="#MainOutlet"
+                        hx-push-url="true">👥
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="Config" hx-get="/view/config" hx-target="#MainOutlet" hx-push-url="true">⚙️
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+<script src="/htmx.min.js"></script>
+
+</html>
